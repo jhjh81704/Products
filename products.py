@@ -19,3 +19,6 @@ while True:
 print(products)
 
 products[0][0]  # procdutcs [] 裡的第 0 個 跟[] 裡面 [] 的第 0 個
+
+for p in products:
+    print(p[0], '的價格是', p[1])
