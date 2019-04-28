@@ -18,4 +18,4 @@ while True:
     products.append([name, price])  # 把上面三行程式碼成這一行
 print(products)
 
-products[0][0]
+products[0][0]  # procdutcs [] 裡的第 0 個 跟[] 裡面 [] 的第 0 個
