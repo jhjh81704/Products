@@ -5,16 +5,25 @@ Created on Sun Apr 28 15:57:00 2019
 @author: user
 """
 
+import os # operating system
+
 # 讀取檔案
 products = []
-with open('products.csv', 'r', encoding = 'utf-8') as f:
-    for line in f:
-        if '商品,價格' in line:
-            continue # 繼續: 直接跳到下一回圈
-        name, price = line.strip().split(',')  # strip: remove 最後面的 '\n'
-        products.append([name, price])
+if os.path.isfile('products.csv'): # 檢查檔案在不在
+    print('yeah! 找到檔案了!')
+    with open('products.csv', 'r', encoding = 'utf-8') as f:
+        for line in f:
+            if '商品,價格' in line:
+                continue # 繼續: 直接跳到下一回圈
+            name, price = line.strip().split(',')  # strip: remove 最後面的 '\n'
+            products.append([name, price])
 
-print(products)
+    print(products)
+else:
+    print('找不到檔案......')
+
+
+
 
 # 請使用者輸入
 while True:
